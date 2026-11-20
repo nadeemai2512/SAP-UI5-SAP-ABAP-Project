@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Manager (ABAP)</title>
+  <script>
+    // Load UI5 from the ABAP system when deployed there, otherwise from the SAPUI5 CDN.
+    (function () {
+      var onAbap = /^\/sap\/bc\/ui5_ui5\//.test(window.location.pathname);
+      var s = document.createElement("script");
+      s.id = "sap-ui-bootstrap";
+      s.src = onAbap
+        ? "/sap/public/bc/ui5_ui5/resources/sap-ui-core.js"
+        : "https://ui5.sap.com/1.120.0/resources/sap-ui-core.js";
+      s.setAttribute("data-sap-ui-theme", "sap_horizon");
+      s.setAttribute("data-sap-ui-resourceroots", '{"com.demo.abapproducts": "./"}');
+      s.setAttribute("data-sap-ui-oninit", "module:sap/ui/core/ComponentSupport");
+      s.setAttribute("data-sap-ui-compatVersion", "edge");
+      s.setAttribute("data-sap-ui-async", "true");
+      document.head.appendChild(s);
+    })();
+  </script>
+</head>
+<body class="sapUiBody">
+  <div data-sap-ui-component data-name="com.demo.abapproducts" data-id="container" data-settings='{"id":"abapproducts"}' data-handle-validation="true"></div>
+</body>
+</html>

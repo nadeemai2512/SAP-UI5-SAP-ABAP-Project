@@ -1,0 +1,20 @@
+{
+  "_version": "1.60.0",
+  "sap.app": {
+    "id": "com.demo.abapproducts",
+    "type": "application",
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "applicationVersion": { "version": "1.0.0" },
+    "i18n": "i18n/i18n.properties"
+  },
+  "sap.ui": { "technology": "UI5", "deviceTypes": { "desktop": true, "tablet": true, "phone": true } },
+  "sap.ui5": {
+    "rootView": { "viewName": "com.demo.abapproducts.view.Main", "type": "XML", "async": true, "id": "main" },
+    "dependencies": { "minUI5Version": "1.108.0", "libs": { "sap.m": {}, "sap.ui.core": {}, "sap.ui.layout": {} } },
+    "contentDensities": { "compact": true, "cozy": true },
+    "models": {
+      "i18n": { "type": "sap.ui.model.resource.ResourceModel", "settings": { "bundleName": "com.demo.abapproducts.i18n.i18n" } }
+    }
+  }
+}

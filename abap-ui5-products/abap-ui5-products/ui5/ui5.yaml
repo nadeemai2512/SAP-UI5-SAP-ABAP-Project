@@ -1,0 +1,16 @@
+specVersion: "3.0"
+metadata:
+  name: com.demo.abapproducts
+type: application
+server:
+  customMiddleware:
+    # Proxy /sap/zproducts to your ABAP system during local development.
+    # Edit baseUri OR set the env vars:
+    #   UI5_MIDDLEWARE_SIMPLE_PROXY_BASEURI=http://<host>:<port>/sap/zproducts
+    #   UI5_MIDDLEWARE_SIMPLE_PROXY_USERNAME=<user>
+    #   UI5_MIDDLEWARE_SIMPLE_PROXY_PASSWORD=<password>
+    - name: ui5-middleware-simpleproxy
+      mountPath: /sap/zproducts
+      afterMiddleware: compression
+      configuration:
+        baseUri: "http://localhost:8000/sap/zproducts"

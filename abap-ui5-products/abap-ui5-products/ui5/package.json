@@ -1,0 +1,19 @@
+{
+  "name": "abap-ui5-products",
+  "version": "1.0.0",
+  "description": "SAPUI5 Product Manager for the ABAP REST service /sap/zproducts",
+  "private": true,
+  "scripts": {
+    "start": "ui5 serve --open index.html",
+    "start:mock": "ui5 serve --open \"index.html?mock=true\"",
+    "build": "ui5 build --clean-dest",
+    "test": "node tests/service.test.js"
+  },
+  "devDependencies": {
+    "@ui5/cli": "^4",
+    "ui5-middleware-simpleproxy": "^3"
+  },
+  "ui5": {
+    "dependencies": ["ui5-middleware-simpleproxy"]
+  }
+}
